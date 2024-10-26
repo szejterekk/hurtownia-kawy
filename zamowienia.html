@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hurtownia</title>
+    <link rel="stylesheet" href="styl4.css">
+</head>
+<body>
+    <div class ="rzad">
+    <section id="logo">
+        <img src="logo.png" alt="hurtownia" height="100px">
+    </section>
+    <section id="menu">
+        <a href="index.html">Strona glowna</a>
+        <a href="zamowienia.html">Zamowienia</a>
+        <a href="blog.html">Blog o kawie</a>
+        <a href="http://gatunki-kawy.pl" target="_blank">Odwiedz takze</a>
+    </section>
+    </div>
+    <section id="banner">
+        <h1>Hurtownia kawy</h1>
+    </section>
+    <div class="rzad">
+    <section id="lewy">
+        <h2>Oferta</h2>
+        <ol>    
+            <li>Kawa palona Arabica</li>
+            <li>Kawa palona Robusta</li>
+            <li>Kawa bezkofeinowa</li>
+            <li id="cztery">Kawa zielona</li>
+        </ol>
+    </section>
+    <section id="prawy">
+        Podaj numer kawy:
+        <input type="number" id="kawa"><br>
+        Podaj wage w dekagramach
+        <input type="number" id="waga"><br>
+        <button  onclick="przycisk()">Zamow</button>
+        <p id="wynikKoszt"></p>
+    </section>
+    </div>
+    <section id="stopka">
+        strone przygotowal: <b>Sebastian Soja</b>
+    </section>
+    <script>
+        function przycisk(){
+            var nrkawy = document.getElementById("kawa").value;
+            var waga1 = document.getElementById("waga").value;
+            switch(nrkawy){
+                case "1":
+                    var koszt = waga1*5
+                    break;
+                case "2":
+                    var koszt = waga1*7
+                    break;
+                case "3":
+                    var koszt = waga1*6
+                    break;
+                default:
+                    var koszt = 0
+                    break;
+            }
+            document.getElementById("wynikKoszt").innerHTML = "Koszt zamówienia wynosi: " +koszt+ "zł"
+        }
+    </script>
+</body>
+</html>
